@@ -62,12 +62,11 @@ class SchoolRepository: ISchoolRepository{
         Exam(Subjects.Informatics, LocalDate.parse("2020-11-10T10:00:00.000"))
     )
 
-
-    override fun getClassesForDate(date: LocalDate): List<SchoolClass> {
+    override suspend fun getClassesForDate(date: LocalDate): List<SchoolClass> {
         val list = mutableListOf<SchoolClass>()
 
         for (item in classesList){
-            if(item.dateTimeEnd.dayOfYear == currentDateTime.dayOfYear){
+            if(item.dateTimeEnd.dayOfYear == date.dayOfYear){
                 list.add(item)
             }
         }
@@ -75,7 +74,7 @@ class SchoolRepository: ISchoolRepository{
         return list
     }
 
-    override fun getHomework(): List<Homework> {
+    override suspend fun getHomework(): List<Homework> {
         val list = mutableListOf<Homework>()
 
         for(item in homeworkList){
@@ -87,7 +86,7 @@ class SchoolRepository: ISchoolRepository{
         return list
     }
 
-    override fun getNextExamDate(): LocalDate? {
+    override suspend fun getNextExamDate(): LocalDate? {
         var currentItem: Exam? = null
 
         for(item in examsList){

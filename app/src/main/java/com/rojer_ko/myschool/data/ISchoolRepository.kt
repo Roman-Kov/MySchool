@@ -6,7 +6,7 @@ import java.time.LocalDate
 
 interface ISchoolRepository {
 
-    fun getClassesForDate(date: LocalDate): List<SchoolClass>
-    fun getHomework(): List<Homework>
-    fun getNextExamDate(): LocalDate?
+    suspend fun getClassesForDate(date: LocalDate): List<SchoolClass>
+    suspend fun getHomework(): List<Homework>
+    suspend fun getNextExamDate(): LocalDate?
 }
