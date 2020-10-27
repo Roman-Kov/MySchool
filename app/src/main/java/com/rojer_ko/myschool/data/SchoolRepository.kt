@@ -4,6 +4,9 @@ import com.rojer_ko.myschool.data.model.Homework
 import com.rojer_ko.myschool.data.model.SchoolClass
 import java.time.LocalDate
 
+/*Обработку данных оставил в репозитории так как объекты моковые и предполагается,
+что с сервера приходят уже обработанные данные*/
+
 class SchoolRepository: ISchoolRepository{
 
     //моковый список уроков, не отсортирован, с уроками на разные даты
