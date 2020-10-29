@@ -4,4 +4,10 @@
     <string name="label_classes">CLASSES</string>
     <string name="string_hello">Hi</string>
     <string name="string_coma_whitespace">", "</string>
+    <string name="are_you_ready_for_exams">Are you ready for exams?</string>
+    <string name="symbol_column">:</string>
+    <string name="_0">0</string>
+    <string name="string_hours">Hours</string>
+    <string name="string_minutes">Minutes</string>
+    <string name="string_seconds">Seconds</string>
 </resources>

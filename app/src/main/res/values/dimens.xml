@@ -2,4 +2,12 @@
 <resources>
     <dimen name="rounded_radius">25dp</dimen>
     <dimen name="bottom_menu_height">80dp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="marginNormal">15dp</dimen>
+    <dimen name="marginSideNormal">20dp</dimen>
+    <dimen name="marginSideSmall">5dp</dimen>
+    <dimen name="rounded_radius_small">10dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="paddingNormal">20dp</dimen>
 </resources>
