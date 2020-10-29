@@ -2,10 +2,8 @@ package com.rojer_ko.myschool.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.utils.navigateOtherFragment
 import kotlinx.android.synthetic.main.activity_main.*

@@ -6,4 +6,4 @@ import java.time.LocalDate
 val currentDateTime: LocalDate = LocalDate.parse("2020-10-28T10:00:00.000")
 
 //имя ученика
-val studentName = "Roman"
+const val studentName:String = "Roman"
