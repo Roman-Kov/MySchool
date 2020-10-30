@@ -8,12 +8,11 @@ import com.rojer_ko.myschool.data.ISchoolRepository
 import com.rojer_ko.myschool.data.model.Homework
 import com.rojer_ko.myschool.data.model.SchoolClass
 import kotlinx.coroutines.*
-import java.time.LocalDate
 
 class HomeScreenViewModel(private val repository: ISchoolRepository): ViewModel() {
 
-    private val _nextExamLiveData = MutableLiveData<LocalDate>()
-    val nextExamLiveData: LiveData<LocalDate> = _nextExamLiveData
+    private val _nextExamLiveData = MutableLiveData<Long>()
+    val nextExamLiveData: LiveData<Long> = _nextExamLiveData
 
     private val _classesLiveData = MutableLiveData<List<SchoolClass>>()
     val classesLiveData: LiveData<List<SchoolClass>> = _classesLiveData
@@ -54,7 +53,7 @@ class HomeScreenViewModel(private val repository: ISchoolRepository): ViewModel(
         Log.e("Error", throwable.message?:"HomeWork error")
     }
 
-    fun getClassesForDate(date: LocalDate){
+    fun getClassesForDate(date: Long){
         classesCoroutineScope.launch {
             _classesLiveData.postValue(repository.getClassesForDate(date))
         }

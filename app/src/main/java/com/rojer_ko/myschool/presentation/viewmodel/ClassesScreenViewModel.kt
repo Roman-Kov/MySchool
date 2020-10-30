@@ -27,7 +27,7 @@ class ClassesScreenViewModel(private val repository: ISchoolRepository): ViewMod
         Log.e("Error", throwable.message?:"Classes error")
     }
 
-    fun getClassesForDate(date: LocalDate){
+    fun getClassesForDate(date: Long){
         classesCoroutineScope.launch {
             _classesLiveData.postValue(repository.getClassesForDate(date))
         }

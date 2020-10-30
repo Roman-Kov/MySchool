@@ -5,5 +5,5 @@ import java.time.LocalDate
 
 data class Homework(val subjects: Subjects,
                     val description: String,
-                    val deadLine: LocalDate
+                    val deadLine: Long
 )
