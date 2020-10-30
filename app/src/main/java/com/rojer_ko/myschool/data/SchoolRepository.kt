@@ -72,13 +72,13 @@ class SchoolRepository: ISchoolRepository{
     //моковый список экзаменов, не отсортирован, экзамены на разные даты, в том числе и на прошедшие
     //1602324000000 - 2020-10-10T10:00:00
     //1604397600000 - 2020-11-03T10:00:00
-    //1604311200000 - 2020-11-02T10:00:00
+    //1604052000000 - 2020-10-30T10:00:00
     //1605002400000 - 2020-11-10T10:00:00
 
     private val examsList = mutableListOf(
         Exam(Subjects.Informatics, 1602324000000),
         Exam(Subjects.Informatics, 1604397600000),
-        Exam(Subjects.Informatics, 1604311200000),
+        Exam(Subjects.Informatics, 1604052000000),
         Exam(Subjects.Informatics, 1605002400000)
     )
 

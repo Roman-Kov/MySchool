@@ -12,9 +12,13 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.data.studentName
+import com.rojer_ko.myschool.presentation.viewmodel.HomeScreenViewModel
 import kotlinx.android.synthetic.main.fragment_home_screen.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeScreenFragment : Fragment() {
+
+    private val viewModel:HomeScreenViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,11 +34,34 @@ class HomeScreenFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val greetingConst = getString(R.string.string_hello) + getString(R.string.string_coma_whitespace)
+        showGreeting()
+        viewModel.getExamTimer()
+        observeTimer()
+    }
+
+    private fun showGreeting() {
+        val greetingConst =
+            getString(R.string.string_hello) + getString(R.string.string_coma_whitespace)
         val greetingName = studentName
         val greeting = SpannableString(greetingConst + greetingName)
-        greeting.setSpan(StyleSpan(Typeface.BOLD), greetingConst.length, (greetingConst + greetingName).length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        greeting.setSpan(
+            StyleSpan(Typeface.BOLD),
+            greetingConst.length,
+            (greetingConst + greetingName).length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
         greetingTextView.text = greeting
     }
 
+    private fun observeTimer(){
+        viewModel.nextExamTimerLiveDataLiveData.observe(viewLifecycleOwner,
+            {
+                firstHour.text = it.firstHour
+                secondHour.text = it.secondHour
+                firstMinute.text = it.firstMinute
+                secondMinute.text = it.secondMinute
+                firstSecond.text = it.firstSecond
+                secondSecond.text = it.secondSecond
+            })
+    }
 }
