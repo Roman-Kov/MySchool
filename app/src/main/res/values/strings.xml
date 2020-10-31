@@ -14,4 +14,5 @@
     <string name="classes_today_text">" classes today"</string>
     <string name="class_today_text">" class today"</string>
     <string name="open_in">Open in</string>
+    <string name="label_homework">Homework</string>
 </resources>

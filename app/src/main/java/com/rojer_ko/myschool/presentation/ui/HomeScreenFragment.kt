@@ -19,6 +19,7 @@ import com.rojer_ko.myschool.data.currentDateTime
 import com.rojer_ko.myschool.data.model.SchoolClass
 import com.rojer_ko.myschool.data.studentName
 import com.rojer_ko.myschool.presentation.viewmodel.HomeScreenViewModel
+import com.rojer_ko.myschool.utils.getCurrentSchoolClass
 import com.rojer_ko.myschool.utils.showToast
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -69,6 +70,10 @@ class HomeScreenFragment : Fragment() {
             classesRecyclerView.layoutManager = LinearLayoutManager(
                 activity?.applicationContext, LinearLayoutManager.HORIZONTAL, false
             )
+        }
+
+        if(classesRecyclerView.adapter != null){
+            classesRecyclerView.scrollToPosition(getCurrentSchoolClass(data, currentDateTime))
         }
     }
 
