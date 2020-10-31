@@ -11,7 +11,7 @@
       android:id="@+id/menu_item_classes"
       android:enabled="true"
       android:icon="@drawable/classes"
-      android:title="@string/label_classes"
+      android:title="@string/label_classes_CAPS"
       android:visible="true" />
   <item
       android:id="@+id/item_3"

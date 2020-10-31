@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">MySchool</string>
     <string name="label_home">HOME</string>
-    <string name="label_classes">CLASSES</string>
+    <string name="label_classes_CAPS">CLASSES</string>
+    <string name="label_classes">Classes</string>
     <string name="string_hello">Hi</string>
     <string name="string_coma_whitespace">", "</string>
     <string name="are_you_ready_for_exams">Are you ready for exams?</string>
@@ -10,4 +11,7 @@
     <string name="string_hours">Hours</string>
     <string name="string_minutes">Minutes</string>
     <string name="string_seconds">Seconds</string>
+    <string name="classes_today_text">" classes today"</string>
+    <string name="class_today_text">" class today"</string>
+    <string name="open_in">Open in</string>
 </resources>

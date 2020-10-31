@@ -1,9 +1,8 @@
 package com.rojer_ko.myschool.data.model
 
 import com.rojer_ko.myschool.data.Subjects
-import java.time.LocalDate
 
-data class SchoolClass(val subjects: Subjects,
+data class SchoolClass(val subject: Subjects,
                        val dateTimeOfStart: Long,
                        val dateTimeEnd: Long,
                        val isExtra: Boolean,

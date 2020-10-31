@@ -10,4 +10,5 @@
     <dimen name="rounded_radius_small">10dp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="paddingNormal">20dp</dimen>
+    <dimen name="marginLarge">30dp</dimen>
 </resources>

@@ -11,14 +11,15 @@ import java.util.*
 class SchoolRepository: ISchoolRepository{
 
     //моковый список уроков, не отсортирован, с уроками на разные даты
+    //!!!время не локальное, по этому отображаться все будет с учетом часового пояса
     private val classesList = mutableListOf<SchoolClass>(
         SchoolClass(
             Subjects.Chemistry,
-            //2020-10-28T09:00:00
+            //2020-10-28T09:00:00 (2020-10-28T12:00:00)
             1603875600000,
-            //2020-10-28T09:45:00
+            //2020-10-28T09:45:00 (2020-10-28T12:45:00)
             1603878300000,
-            isExtra = false, isOnline = false, teachersName = "Mr. W White"
+            isExtra = false, isOnline = true, teachersName = "Mr. W White"
         ),
         SchoolClass(
             Subjects.English,
@@ -34,7 +35,7 @@ class SchoolRepository: ISchoolRepository{
             1603886400000,
             //2020-10-28T12:45:00
             1603889100000,
-            isExtra = true, isOnline = false, teachersName = "Mr. B Morgan"
+            isExtra = true, isOnline = true, teachersName = "Mr. B Morgan"
         ),
         SchoolClass(
             Subjects.History,

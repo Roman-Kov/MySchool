@@ -130,7 +130,6 @@ class HomeScreenViewModel(private val repository: ISchoolRepository): ViewModel(
             firstSecond.toString(),
             secondSecond.toString()
         )
-
     }
 
     override fun onCleared() {
