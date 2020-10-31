@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="@dimen/marginNormal"
+    android:layout_marginEnd="@dimen/marginNormal"
+    android:padding="@dimen/paddingNormal"
+    android:background="@drawable/background_rounded_recycler_item">
+
+    <TextView
+        android:id="@+id/subjectHomework"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
+        style="@style/style_label_normal"
+        tools:text = "History" />
+
+    <ImageView
+        android:id="@+id/homeworkImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_book"
+        android:layout_marginStart="@dimen/marginNormal"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/timeLeftContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/subjectHomework"
+        app:layout_constraintTop_toBottomOf="@id/subjectHomework"
+        android:layout_marginTop="@dimen/marginNormal">
+
+        <ImageView
+            android:id="@+id/timeHomeworkImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_baseline_access_time" />
+
+        <TextView
+            android:id="@+id/daysLeftForHomework"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@id/timeHomeworkImage"
+            app:layout_constraintTop_toTopOf="@id/timeHomeworkImage"
+            android:layout_marginStart="@dimen/marginSideSmall"
+            tools:text = "2 days left"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/homeworkDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/timeLeftContainer"
+        app:layout_constraintStart_toStartOf="@id/timeLeftContainer"
+        android:layout_marginTop="@dimen/marginNormal"
+        android:textColor="@android:color/white"
+        tools:text = "Homework description"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_baseline_emoji_emotions_24"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

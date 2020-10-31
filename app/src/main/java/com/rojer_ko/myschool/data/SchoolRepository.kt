@@ -19,7 +19,7 @@ class SchoolRepository: ISchoolRepository{
             1603875600000,
             //2020-10-28T09:45:00 (2020-10-28T12:45:00)
             1603878300000,
-            isExtra = false, isOnline = true, teachersName = "Mr. W White"
+            isExtra = false, isOnline = false, teachersName = "Mr. W White"
         ),
         SchoolClass(
             Subjects.English,
@@ -27,7 +27,7 @@ class SchoolRepository: ISchoolRepository{
             1603879200000,
             //2020-10-28T10:45:00
             1603881900000,
-            isExtra = false, isOnline = false, teachersName = "Mr. N Robinson"
+            isExtra = false, isOnline = true, teachersName = "Mr. N Robinson"
         ),
         SchoolClass(
             Subjects.Informatics,
@@ -59,15 +59,16 @@ class SchoolRepository: ISchoolRepository{
     //моковый список ДЗ, не отсортирован, с ДЗ на разные даты, в том числе и на прошедшие
     private val homeworkList = mutableListOf(
         // 1602288000000 - 2020-10-10
+        // 1604016000000 - 2020-10-30
         // 1604188800000 - 2020-11-01
         // 1604361600000 - 2020-11-03
         // 1604275200000 - 2020-11-02
 
-        Homework(Subjects.Literature, "Reed WAR AND PEACE", 1602288000000),
-        Homework(Subjects.Literature, "Reed MR FROM SAN FRANSISCO", 1604188800000),
+        Homework(Subjects.Literature, "Read WAR AND PEACE", 1602288000000),
+        Homework(Subjects.Literature, "Read MR FROM SAN FRANSISCO", 1604188800000),
         Homework(Subjects.Mathematics, "Prove Fermat's theorem", 1604361600000),
         Homework(Subjects.Informatics, "Codding a program of school diary", 1604275200000),
-        Homework(Subjects.Russian, "Learn rule ZHI-SHI ", 1604275200000)
+        Homework(Subjects.Russian, "Learn rule ZHI-SHI ", 1604016000000)
     )
 
     //моковый список экзаменов, не отсортирован, экзамены на разные даты, в том числе и на прошедшие

@@ -15,4 +15,6 @@
     <string name="class_today_text">" class today"</string>
     <string name="open_in">Open in</string>
     <string name="label_homework">Homework</string>
+    <string name="string_days_left">days left</string>
+    <string name="string_day_left">day left</string>
 </resources>

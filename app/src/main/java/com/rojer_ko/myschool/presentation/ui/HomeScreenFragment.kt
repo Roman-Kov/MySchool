@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.data.currentDateTime
+import com.rojer_ko.myschool.data.model.Homework
 import com.rojer_ko.myschool.data.model.SchoolClass
 import com.rojer_ko.myschool.data.studentName
 import com.rojer_ko.myschool.presentation.viewmodel.HomeScreenViewModel
@@ -29,6 +30,7 @@ class HomeScreenFragment : Fragment() {
 
     private val viewModel:HomeScreenViewModel by viewModel()
     private var homeClassesAdapter: HomeClassesAdapter? = null
+    private var homeHomeworkAdapter: HomeHomeworkAdapter? = null
 
     private val onItemClickListener: HomeClassesAdapter.OnListItemClickListener =
         object : HomeClassesAdapter.OnListItemClickListener {
@@ -54,11 +56,13 @@ class HomeScreenFragment : Fragment() {
         showGreeting()
         viewModel.getExamTimer()
         viewModel.getClassesForDate(currentDateTime)
+        viewModel.getHomework()
         observeTimer()
         observeClasses()
+        observeHomework()
     }
 
-    private fun setDataToAdapter(data: List<SchoolClass>) {
+    private fun setDataToClassesAdapter(data: List<SchoolClass>) {
         if (homeClassesAdapter != null) {
             homeClassesAdapter!!.setData(data)
         } else {
@@ -74,6 +78,21 @@ class HomeScreenFragment : Fragment() {
 
         if(classesRecyclerView.adapter != null){
             classesRecyclerView.scrollToPosition(getCurrentSchoolClass(data, currentDateTime))
+        }
+    }
+
+    private fun setDataToHomeworkAdapter(data: List<Homework>) {
+        if (homeHomeworkAdapter != null) {
+            homeHomeworkAdapter!!.setData(data)
+        } else {
+            homeHomeworkAdapter = HomeHomeworkAdapter(data)
+        }
+
+        if(homeworkRecyclerView.adapter == null) {
+            homeworkRecyclerView.adapter = homeHomeworkAdapter
+            homeworkRecyclerView.layoutManager = LinearLayoutManager(
+                activity?.applicationContext, LinearLayoutManager.HORIZONTAL, false
+            )
         }
     }
 
@@ -113,8 +132,14 @@ class HomeScreenFragment : Fragment() {
                 }
                 classesTodayTextView.text = classesTodayText
 
-                setDataToAdapter(it)
+                setDataToClassesAdapter(it)
             })
+    }
+
+    private fun observeHomework(){
+        viewModel.homeWorksLiveData.observe(viewLifecycleOwner,{
+            setDataToHomeworkAdapter(it)
+        })
     }
 
     private fun startSkype(){
