@@ -25,8 +25,10 @@ import com.rojer_ko.myschool.utils.showToast
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
+class HomeScreenFragment : BaseFragment() {
 
-class HomeScreenFragment : Fragment() {
+    override val res: Int = R.layout.fragment_home_screen
+    override val resToolbar: Int = R.id.homeToolbar
 
     private val viewModel:HomeScreenViewModel by viewModel()
     private var homeClassesAdapter: HomeClassesAdapter? = null
@@ -38,17 +40,6 @@ class HomeScreenFragment : Fragment() {
                 startSkype()
             }
         }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        view?.let {
-            val toolbar: Toolbar = it.findViewById(R.id.homeToolbar)
-            (activity as MainActivity).setSupportActionBar(toolbar)
-        }
-        return inflater.inflate(R.layout.fragment_home_screen, container, false)
-    }
 
     override fun onStart() {
         super.onStart()
