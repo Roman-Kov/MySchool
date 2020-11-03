@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/classesScreenFragment"
+        android:name="com.rojer_ko.myschool.presentation.ui.ClassesScreenFragment"
+        android:label="fragment_classes_screen"
+        tools:layout="@layout/fragment_classes_screen" >
+        <action
+            android:id="@+id/action_classesScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.rojer_ko.myschool.presentation.ui.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_classesScreenFragment"
+            app:destination="@id/classesScreenFragment" />
+    </fragment>
+</navigation>
