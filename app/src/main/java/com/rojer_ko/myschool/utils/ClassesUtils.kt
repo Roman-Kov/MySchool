@@ -9,7 +9,13 @@ import java.util.*
 fun getCurrentSchoolClass(data: List<SchoolClass>, currentTime: Long): Int{
 
     for(item in data){
-        val timeRange = item.dateTimeOfStart .. item.dateTimeEnd
+        var timeRange: LongRange
+        timeRange = if(data.indexOf(item) == 0){
+            item.dateTimeOfStart .. item.dateTimeEnd
+        }else{
+            val prevItem = data[data.indexOf(item) - 1]
+            prevItem.dateTimeEnd .. item.dateTimeEnd
+        }
         if(currentTime in timeRange) return data.indexOf(item)
     }
 
