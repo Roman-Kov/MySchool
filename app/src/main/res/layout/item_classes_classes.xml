@@ -10,12 +10,13 @@
     android:layout_marginEnd="@dimen/marginNormal">
 
     <TextView
-        android:id="@+id/classesItemTime"
+        android:id="@+id/classesItemTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/marginNormal"
         style="@style/style_label_normal"
         tools:text="8:00 - 8:45"/>
 
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/classesItemTime"
+        app:layout_constraintTop_toBottomOf="@id/classesItemTimeTextView"
         android:layout_marginTop="@dimen/marginNormal"
         android:background="@drawable/background_rounded_recycler_item">
 
@@ -56,7 +57,7 @@
                 tools:text = "History" />
 
             <TextView
-                android:id="@+id/classesItemTeacher"
+                android:id="@+id/classesItemTeacherTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryLight"
@@ -66,6 +67,7 @@
                 tools:text = "Mr. Mont"/>
 
             <TextView
+                android:id="@+id/classesItemDescriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryLight"

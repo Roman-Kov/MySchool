@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.data.model.SchoolClass
+import com.rojer_ko.myschool.utils.convertStartEndTimesToLine
 import kotlinx.android.extensions.LayoutContainer
 import java.text.SimpleDateFormat
 import java.util.*
@@ -44,12 +45,7 @@ class HomeClassesAdapter(private val onItemClickListener: OnListItemClickListene
                     onItemClickListener.onItemClick()
                 }
             }
-
-            val dateFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
-            val classStart = dateFormat.format(data.dateTimeOfStart)
-            val classEnd = dateFormat.format(data.dateTimeEnd)
-            val classStartEnd = "$classStart - $classEnd"
-            classStartEndTextView.text = classStartEnd
+            classStartEndTextView.text = convertStartEndTimesToLine(data.dateTimeOfStart, data.dateTimeEnd)
         }
     }
 

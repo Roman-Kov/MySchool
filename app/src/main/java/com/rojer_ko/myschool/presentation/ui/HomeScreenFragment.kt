@@ -126,14 +126,4 @@ class HomeScreenFragment : BaseFragment() {
             setDataToHomeworkAdapter(it)
         })
     }
-
-    private fun startSkype(){
-        try {
-            val skype = Intent("android.intent.action.VIEW")
-            skype.data = Uri.parse("skype:")
-            startActivity(skype)
-        } catch (e: ActivityNotFoundException) {
-            showToast("Skype not found")
-        }
-    }
 }

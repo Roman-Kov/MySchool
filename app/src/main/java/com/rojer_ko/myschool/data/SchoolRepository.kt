@@ -43,7 +43,7 @@ class SchoolRepository: ISchoolRepository{
             1603885500000,
             //2020-10-28T11:45:00
             1603885500000,
-            isExtra = false, isOnline = false, teachersName = "Mr. G Kent",
+            isExtra = true, isOnline = false, teachersName = "Mr. G Kent",
             description = "Formation of the USA"
         ),
         SchoolClass(
