@@ -4,15 +4,9 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
-import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.data.currentDateTime
@@ -60,15 +54,15 @@ class HomeScreenFragment : BaseFragment() {
             homeClassesAdapter = HomeClassesAdapter(onItemClickListener, data)
         }
 
-        if(classesRecyclerView.adapter == null) {
-            classesRecyclerView.adapter = homeClassesAdapter
-            classesRecyclerView.layoutManager = LinearLayoutManager(
+        if(classesHomeRecyclerView.adapter == null) {
+            classesHomeRecyclerView.adapter = homeClassesAdapter
+            classesHomeRecyclerView.layoutManager = LinearLayoutManager(
                 activity?.applicationContext, LinearLayoutManager.HORIZONTAL, false
             )
         }
 
-        if(classesRecyclerView.adapter != null){
-            classesRecyclerView.scrollToPosition(getCurrentSchoolClass(data, currentDateTime))
+        if(classesHomeRecyclerView.adapter != null){
+            classesHomeRecyclerView.scrollToPosition(getCurrentSchoolClass(data, currentDateTime))
         }
     }
 

@@ -54,6 +54,12 @@
                 android:textSize="@dimen/text_size_normal"
                 android:layout_marginStart="@dimen/marginNormal"
                 tools:text="Today, 1 June"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/classesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/marginNormal"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
