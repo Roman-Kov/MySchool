@@ -9,16 +9,16 @@ import com.rojer_ko.myschool.R
 import com.rojer_ko.myschool.data.model.SchoolClass
 import com.rojer_ko.myschool.utils.convertStartEndTimesToLine
 import kotlinx.android.extensions.LayoutContainer
-import java.text.SimpleDateFormat
-import java.util.*
 
-class HomeClassesAdapter(private val onItemClickListener: OnListItemClickListener,
-                         private var items: List<SchoolClass>): RecyclerView.Adapter<HomeClassesAdapter.MainViewHolder>() {
+class HomeClassesAdapter(
+    private val onItemClickListener: OnListItemClickListener,
+    private var items: List<SchoolClass>
+) : RecyclerView.Adapter<HomeClassesAdapter.MainViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
 
         val v: View =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_home_classes, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_home_classes, parent, false)
         return MainViewHolder(v)
     }
 
@@ -30,8 +30,8 @@ class HomeClassesAdapter(private val onItemClickListener: OnListItemClickListene
         holder.bind(items[position])
     }
 
-    inner class MainViewHolder(override val containerView: View):
-    RecyclerView.ViewHolder(containerView), LayoutContainer {
+    inner class MainViewHolder(override val containerView: View) :
+        RecyclerView.ViewHolder(containerView), LayoutContainer {
         private val subjectName = containerView.findViewById<TextView>(R.id.subjectTextView)
         private val classStartEndTextView = containerView.findViewById<TextView>(R.id.classStartEnd)
         private val openSkypeBtn = containerView.findViewById<View>(R.id.openSkypeBtn)
@@ -39,21 +39,24 @@ class HomeClassesAdapter(private val onItemClickListener: OnListItemClickListene
         fun bind(data: SchoolClass) {
 
             subjectName.text = data.subject.title
-            if(data.isOnline){
+            if (data.isOnline) {
                 openSkypeBtn.visibility = View.VISIBLE
                 openSkypeBtn.setOnClickListener {
                     onItemClickListener.onItemClick()
                 }
+            } else {
+                openSkypeBtn.visibility = View.GONE
             }
-            classStartEndTextView.text = convertStartEndTimesToLine(data.dateTimeOfStart, data.dateTimeEnd)
+            classStartEndTextView.text =
+                convertStartEndTimesToLine(data.dateTimeOfStart, data.dateTimeEnd)
         }
     }
 
-    interface OnListItemClickListener{
+    interface OnListItemClickListener {
         fun onItemClick()
     }
 
-    fun setData(data: List<SchoolClass>){
+    fun setData(data: List<SchoolClass>) {
         this.items = data
         notifyDataSetChanged()
     }
